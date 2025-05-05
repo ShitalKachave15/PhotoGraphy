@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .main {
+            width: 100%;
+            height: 80vh;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.529), rgba(0, 0, 0, 0.244)), url(pexels-fox-225157.jpg);
+            background-size: 100% 100vh;
+
+        }
+
+        .icon {
+            display: flex;
+            justify-content: end;
+        }
+
+        .icon i {
+            color: white;
+            padding: 10px 5px;
+            margin: 5px 3px;
+            font-size: 20px;
+        }
+
+        .nav {
+            height: 80px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+                        /* margin: 10px 10px; */
+            background-color:rgba(255, 255, 255, 0.447);
+             position: sticky;
+             top: 0px;
+             z-index: 1;
+           
+        }
+
+        .logo h1 {
+            font-size: 50px;
+            color: black;
+            transition: all 2s;
+            margin-left: 20px;
+            
+        }
+
+        .logo h1:hover {
+            color: yellow;
+        }
+
+        .navbar {
+            display: flex;
+            margin: 0px 5px;
+          
+         
+        }
+
+        .navbar ul {
+            display: flex;
+            justify-content: flex-end;
+
+        }
+
+        .navbar li {
+            list-style-type: none;
+            padding: 8px 5px;
+            margin: 0px 10px;
+           
+
+        }
+
+        a {
+            text-decoration: none;
+            font-size: large;
+            /* color: white; */
+
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+           
+            transition: all 1s;
+            position: relative;
+        }
+
+        .navbar a::after {
+            content: "";
+            height: 2px;
+            width: 0%;
+            background-color: red;
+            display: block;
+            transition: all 2s linear;
+            margin-top: 5px auto;
+            /* position: absolute;
+            top: 25px;
+            left: 50%; */
+            
+        }
+
+        .navbar a:hover::after {
+            width: 100%;
+            /* left: 0; */
+            
+        }
+
+        .navbar a:hover {
+            color: red
+        }
+
+        .navbar button {
+            padding: 0px 7px;
+            text-transform: uppercase;
+            background-color: transparent;
+            border: 1px solid black;
+            color: black;
+            width: 90px;
+            height: 40px;
+            transition: all 2s;
+            border-radius: 5px;
+            margin: 0px 10px;
+        }
+
+        .nav button:hover {
+            color: red;
+            background-color: #cec3c3;
+            font-weight: bolder;
+            width: 120px;
+            height: 60px;
+        }
+
+        .mid {
+            height: 400px;
+            width: 100%;
+            /* background-color: #fff; */
+            display: flex;
+            justify-content: center;
+           align-items: center;
+           /* margin: 30px 20px; */
+
+
+        }
+
+        .midsection {
+            height: 250px;
+            width: 500px;
+            background-color: rgba(255, 255, 255, 0.473);
+            text-align: center;
+            padding: 5px 10px;
+            
+        }
+
+        .midsection h1 {
+            padding: 15px 10px;
+        }
+
+        .midsection p {
+            padding: 20px 10px;
+        }
+
+        .midsection a {
+            color: black;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 20px;
+        }
+
+        .midsection a::after {
+            content: "";
+            height: 3px;
+            width: 10%;
+            background-color: black;
+            display: block;
+            margin: 10px auto;
+        }
+
+        .cont1 {
+            height: 300px;
+            width: 100%;
+            /* background-color: gray; */
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .data {
+            height: 300px;
+            width: 300px;
+            /* background-color: #ddd; */
+        }
+
+        .secdata {
+            display: flex;
+            align-items: center;
+        }
+
+        .secdata i {
+            font-size: 40px;
+            margin: 5px 10px;
+        }
+
+        .data h1 {
+            margin-left: 5px;
+        }
+
+        .data p {
+            margin: 0px 15px;
+            padding: 20px 0px 20px 50px;
+        }
+
+        .data a {
+            /* margin: 5px 15px;
+           padding: 16px 40px; */
+            margin: 0px 15px;
+            padding: 20px 5px 20px 50px;
+
+            color: black;
+            text-transform: uppercase;
+            font-size: larger;
+        }
+
+        .data a::after {
+            content: "";
+            height: 2px;
+            width: 15%;
+            background-color: black;
+            display: block;
+            margin: 5px 65px;
+
+        }
+
+        .history {
+            height: 600px;
+            width: 100%;
+            background-color: #ddd;
+            text-align: center;
+
+        }
+
+        .history h3 {
+            text-transform: uppercase;
+            padding: 20px 10px;
+            position: relative;
+
+        }
+
+
+        .historydata {
+            text-align: center;
+            height: 200px;
+            width: 100%;
+            /* background-color: white; */
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .about {
+            height: 200px;
+            width: 400px; 
+            /* background-color: white; */
+
+        }
+
+        .about h1 {
+            text-transform: capitalize;
+            font-size: 50px;
+            font-weight: 900;
+            /* margin: 10px; */
+            padding: 10px 10px;
+        }
+
+        .images {
+            display: flex;
+            justify-content: center;
+            height: 350px;
+            width: 100%;
+
+        }
+
+        .one1 {
+            height: 300px;
+            width: 250px;
+            background-image: url(pexels-diana-dorčáková-1262803.jpg);
+            background-size: 250px 300px;
+            margin: 0px 5px;
+            color: white;
+            text-align: center;
+        }
+
+        .one2 {
+            height: 300px;
+            width: 250px;
+            background-image: url(pexels-eberhard-grossgasteiger-1062249.jpg);
+            background-size: 250px 300px;
+            margin: 0px 5px;
+            color: white;
+            text-align: center;
+
+        }
+
+        .one3 {
+            height: 300px;
+            width: 250px;
+            background-image: url(pexels-pixabay-33227.jpg);
+            background-size: 250px 300px;
+            margin: 0px 5px;
+            color: white;
+            text-align: center;
+        }
+
+        .images i {
+            margin: 20px;
+            font-size: 30px;
+
+            /* border: 2px solid white; */
+        }
+
+        .images p {
+            padding: 10px 15px;
+        }
+
+        .footer {
+            height: 400px;
+            width: 100%;
+            display: flex;
+        }
+
+        .footercont {
+            height: 400px;
+            width: 50%;
+            background-color: black;
+            color: white;
+            text-align: right;
+            display: flex;
+
+            justify-content: center;
+
+        }
+
+        .foot {
+            height: 400px;
+            width: 400px;
+            margin-right: 10px;
+        }
+
+        .footercont h2 {
+            margin: 20px 20px;
+            padding: 5px 0px;
+            font-size: 30px;
+        }
+
+        .footercont p {
+            margin: 20px 20px;
+        }
+
+        .footercont button {
+            margin: 20px 20px;
+            padding: 10px 20px;
+            border: 2px inset white;
+            background-color: transparent;
+            color: white;
+        }
+
+        .img {
+            height: 400px;
+            width: 50%;
+ overflow: hidden;
+
+        }
+
+        .img img {
+            height: 100%;
+            width: 100%;
+            transition: all 2s linear;
+        }
+
+        .img:hover img{
+            transform: scale(1.4);
+        }
+
+        .gallery {
+            height: 610px;
+            width: 100%;
+            margin: 10px 0px 0px 0px;
+            /* display: flex; */
+        }
+
+        .Fgallery {
+            height: 300px;
+            width: 100%;
+            display: flex;
+            margin: 0px 5px;
+        }
+
+        .Sgallery {
+            height: 300px;
+            width: 100%;
+            display: flex;
+            margin: 0px 5px;
+        }
+
+        .Fgallery img {
+            height: 300px;
+            width: 330px;
+            margin: 2px 2px;
+
+        }
+
+        .Sgallery img {
+            height: 300px;
+            width: 330px;
+            margin: 5px 2px;
+
+        }
+
+        .oneimg {
+            height: 300px;
+            width: 330px;
+            overflow: hidden;
+
+        }
+
+        .oneimg img {
+            height: 100%;
+            width: 100%;
+            transition: all 2s linear;
+        }
+
+        .oneimg:hover img {
+            transform: scale(1.2);
+        }
+
+        .twoimg {
+            height: 300px;
+            width: 330px;
+            overflow: hidden;
+
+        }
+
+        .twoimg img {
+            height: 100%;
+            width: 100%;
+            transition: all 2s linear;
+        }
+
+        .twoimg:hover img {
+            transform: scale(1.2);
+        }
+
+        .threeimg {
+            height: 300px;
+            width: 330px;
+            overflow: hidden;
+
+        }
+
+        .threeimg img {
+            height: 100%;
+            width: 100%;
+            transition: all 2s linear;
+        }
+
+        .threeimg:hover img {
+            transform: scale(1.2);
+        }
+
+
+        .fourimg {
+            height: 300px;
+            width: 330px;
+            overflow: hidden;
+
+        }
+
+        .fourimg img {
+            height: 100%;
+            width: 100%;
+            transition: all 2s linear;
+        }
+
+        .fourimg:hover img {
+            transform: scale(1.2);
+        }
+         
+
+        .fiveimg {
+            height: 300px;
+            width: 330px;
+            overflow: hidden;
+
+        }
+
+        .fiveimg img {
+            height: 100%;
+            width: 100%;
+            transition: all 2s linear;
+        }
+
+        .fiveimg:hover img {
+            transform: scale(1.2);
+        }
+        .siximg {
+            height: 300px;
+            width: 330px;
+            overflow: hidden;
+
+        }
+
+        .siximg img {
+            height: 100%;
+            width: 100%;
+            transition: all 2s linear;
+        }
+
+        .siximg:hover img {
+            transform: scale(1.2);
+        }
+        .sevenimg {
+            height: 300px;
+            width: 330px;
+            overflow: hidden;
+
+        }
+
+        .sevenimg img {
+            height: 100%;
+            width: 100%;
+            transition: all 2s linear;
+        }
+
+        .sevenimg:hover img {
+            transform: scale(1.2);
+        }
+        .eightimg {
+            height: 300px;
+            width: 330px;
+            overflow: hidden;
+
+        }
+
+        .eightimg img {
+            height: 100%;
+            width: 100%;
+            transition: all 2s linear;
+        }
+
+        .eightimg:hover img {
+            transform: scale(1.2);
+        }
+
+        .contact {
+            height: 670px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center; */
+            align-items: center;
+
+            background-image: url(pexels-pok-rie-129964.jpg);
+            background-size: 100% 670px;
+        }
+
+        .details {
+            height: 550px;
+            width: 450px;
+            background-color: rgba(255, 255, 255, 0.563);
+            padding: 5px 0px 5px 30px;
+            margin: 30px 50px;
+            text-transform: capitalize;
+            border-radius: 20px;
+
+        }
+
+        .contacticon i {
+            color: white;
+            padding: 0px 20px;
+            font-size: 30px;
+            margin: 10px;
+            /* transition: all 1s linear; */
+        }
+
+        .contacticon i:hover {
+            color: yellow;
+        }
+
+        .details h1 {
+            margin: 10px;
+            text-align: center;
+            color: rgb(0, 119, 255);
+        }
+
+        .details button {
+            background-color: rgb(0, 204, 255);
+            padding: 5px;
+            margin: 10px 0px;
+            width: 150px;
+            transition: all 2s;
+            border-radius: 5px;
+        }
+
+        .details button:hover {
+            background-color: goldenrod;
+        }
+
+        .details input {
+            width: 300px;
+            height: 30px;
+            border: 1px solid;
+            border-radius: 10px;
+
+        }
+
+        .details textarea {
+            width: 300px;
+            border: 1px solid;
+            border-radius: 10px;
+
+        }
+
+        input[id="email"] {
+            border: none;
+            background-color: transparent;
+        }
+
+        input[type="tel"] {
+            border: none;
+            background-color: transparent;
+        }
+
+        input:hover {
+            background-color: rgba(128, 128, 128, 0.395);
+        }
+
+
+        textarea:hover {
+            background-color: rgba(128, 128, 128, 0.634);
+        }
+
+        input::placeholder {
+            padding: 0px 10px;
+
+        }
+
+        textarea::placeholder {
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+
+        <div class="logo">
+            <h1>PhotoM4</h1>
+        </div>
+        <div class="navbar">
+            <ul>
+                <li><a href="#home">Home </i></a></li>
+                <li><a href="#Details"> Details</a></li>
+
+                <li><a href="#History">History</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#Contact">Contact</a></li>
+
+
+
+            </ul>
+            <button>buy now</button>
+        </div>
+    </div>
+    <div class="main">
+        <a name="home"></a>
+        <div class="icon">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-whatsapp"></i>
+
+        </div>
+
+       
+        
+        <div class="mid">
+            <div class="midsection">
+                <h1>Photography Shop</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro libero cum nemo laboriosam totam.
+                    Aliquam a minima nesciunt eius, amet culpa, aspernatur possimus suscipit commodi et, ipsam quae sed
+                    dignissimos.</p>
+                <a href="">Shop now</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="cont1">
+        <a name="Details"></a>
+        <div class="data">
+
+            <div class="secdata">
+                <i class="fa-solid fa-camera"></i>
+                <h1>Wide Range</h1>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus quisquam optio voluptatum, rem
+                beatae accusamus consectetur consequuntur nulla ex perferendis.</p>
+            <a href="">Read More</a>
+
+        </div>
+
+        <div class="data">
+            <div class="secdata">
+                <i class="fa-regular fa-lightbulb"></i>
+                <h1>Wide Range</h1>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus quisquam optio voluptatum, rem
+                beatae accusamus consectetur consequuntur nulla ex perferendis.</p>
+            <a href="">Read More</a>
+
+        </div>
+        <div class="data">
+            <div class="secdata">
+                <i class="fa-regular fa-window-restore"></i>
+                <h1>Wide Range</h1>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus quisquam optio voluptatum, rem
+                beatae accusamus consectetur consequuntur nulla ex perferendis.</p>
+            <a href="">Read More</a>
+
+        </div>
+
+
+
+
+
+    </div>
+    <div class="history">
+        <a name="History"></a>
+        <h3>history</h3>
+
+
+        <div class="historydata">
+            <div class="about">
+                <h1>About Us</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores dolor aliquid facere laborum quidem
+                    voluptatibus quae delectus tempora earum! Eligendi laboriosam, delectus atque voluptas accusantium
+                    quo facere asperiores libero voluptatibus.</p>
+            </div>
+        </div>
+        <div class="images">
+            <div class="one1">
+                <i class="fa-regular fa-eye"></i>
+                <h3>Photography</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste repellendus itaque, corporis ratione
+                    magni fugit?</p>
+            </div>
+            <div class="one2">
+
+                <i class="fa-solid fa-earth-americas"></i>
+                <h3>Photography</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste repellendus itaque, corporis ratione
+                    magni fugit?</p>
+            </div>
+            <div class="one3">
+
+                <i class="fa-solid fa-camera"></i>
+                <h3>Photography</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste repellendus itaque, corporis ratione
+                    magni fugit?</p>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="footer">
+
+        <div class="footercont">
+            <div class="foot">
+                <h2>We know our product</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, atque impedit? Provident sed dicta
+                    placeat dolore, beatae iste facere praesentium non, totam, quia quo voluptatum consequuntur cum
+                    deserunt nisi eum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Id quos dicta esse quia
+                    ipsum incidunt laudantium reiciendis ipsam minus quasi. Lorem, ipsum dolor sit amet consectetur
+                    adipisicing elit. Nisi animi quis, assumenda eaque officiis quam.</p>
+                <button>View more</button>
+            </div>
+        </div>
+        <div class="img">
+            <img src="pexels-jeshootscom-167832.jpg" alt="">
+        </div>
+    </div>
+
+
+    <div class="gallery">
+        <a name="gallery"></a>
+        <div class="Fgallery">
+
+
+            <div class="oneimg"> <img src="babiesphoto/pexels-j-carter-713959.jpg" alt=""></div>
+            <div class="twoimg"> <img src="babiesphoto/pexels-kelvin-agustinus-1973270.jpg" alt=""></div>
+            <div class="threeimg"><img src="babiesphoto/pexels-pixabay-459976.jpg" alt=""></div>
+            <div class="fourimg"><img src="babiesphoto/pexels-rene-asmussen-2505101.jpg" alt=""></div>
+
+
+
+        </div>
+        <div class="Sgallery">
+            <div class="fiveimg"><img src="babiesphoto/pexels-sam-rana-1442005.jpg" alt=""></div>
+            <div class="siximg"> <img src="babiesphoto/pexels-spencer-selover-428388.jpg" alt=""></div>
+            <div class="sevenimg"> <img src="babiesphoto/pexels-daniel-reche-1557182.jpg" alt=""></div>
+            <div class="eightimg"> <img src="babiesphoto/pexels-janko-ferlic-590471.jpg" alt=""></div>
+        </div>
+    </div>
+    <div class="contact">
+        <a name="Contact"></a>
+        <div class="details">
+            <form action="">
+                <h1>Get in Touch</h1>
+                <label for="">Email</label><br>
+                <input type="email" name="" id="email" value="abc@gmail.com" readonly><br><br>
+                <label for="">Phone</label><br>
+                <input type="tel" name="" id="" value="123-456-789" readonly><br><br>
+
+                <label for="">Enter your Name *</label><br>
+                <input type="text" name="" id="" required placeholder="Name"><br><br>
+                <label for="">Enter your Email*</label><br>
+                <input type="email" name="" id="Emailid" required placeholder="Email"> <br><br>
+                <label for="">Enter your Subject*</label><br>
+                <input type="text" name="" id="" required placeholder="Subject"> <br><br>
+                <label for="">Enter your Message Here*</label><br>
+                <textarea name="" id="" cols="30" rows="5" placeholder="Message"></textarea><br>
+                <button>Submit</button>
+
+            </form>
+
+        </div>
+        <div class="contacticon">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-whatsapp"></i>
+
+        </div>
+    </div>
+
+    
+</body>
+
+</html>
+
+
